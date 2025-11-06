@@ -9,17 +9,17 @@ class LocationForm
 {
     public static function configure(Schema $schema): Schema
     {
-        return $schema([
+        return $schema->schema([
             Forms\Components\TextInput::make('name')
-                ->label('Nama Lokasi')
+                ->label('Name')
                 ->required()
                 ->maxLength(255),
             Forms\Components\Textarea::make('description')
-                ->label('Deskripsi')
+                ->label('Description')
                 ->maxLength(65535)
                 ->columnSpanFull(),
             Forms\Components\TextInput::make('address')
-                ->label('Alamat')
+                ->label('Address')
                 ->required()
                 ->maxLength(255),
             Forms\Components\Toggle::make('status')

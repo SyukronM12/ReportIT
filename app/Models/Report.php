@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
-    protected $fillable = ['title', 'content', 'location_id', 'category_id'];
+    protected $fillable = [
+        'title',
+        'description',
+        'location_id',
+        'category_id',
+        'status',
+        'image',
+        'reported_by',
+    ];
 
     public function category()
     {

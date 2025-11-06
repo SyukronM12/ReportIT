@@ -9,14 +9,14 @@ class CategoryForm
 {
     public static function configure(Schema $schema): Schema
     {
-        return $schema([
+        return $schema->schema([
             Forms\Components\TextInput::make('name')
-                ->label('Nama Kategori')
+                ->label('Name')
                 ->required()
                 ->maxLength(100),
 
             Forms\Components\Textarea::make('description')
-                ->label('Deskripsi')
+                ->label('Description')
                 ->rows(3),
         ]);
     }

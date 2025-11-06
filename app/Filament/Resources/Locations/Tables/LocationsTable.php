@@ -12,17 +12,17 @@ class LocationsTable
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama')
+                    ->label('Name')
                     ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address')
-                    ->label('Alamat')
+                    ->label('Address')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('status')
                     ->label('Status')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Dibuat')
+                    ->label('Created By')
                     ->dateTime('d M Y'),
             ])
             ->filters([]);

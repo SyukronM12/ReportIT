@@ -9,33 +9,44 @@ class ReportForm
 {
     public static function configure(Schema $schema): Schema
     {
-        return $schema([
+        return $schema->schema([
             Forms\Components\TextInput::make('title')
-                ->label('Judul')
+                ->label('Title')
                 ->required(),
+
             Forms\Components\Textarea::make('description')
-                ->label('Deskripsi'),
+                ->label('Description')
+                ->nullable(),
+
             Forms\Components\Select::make('category_id')
-                ->label('Kategori')
+                ->label('Category')
                 ->relationship('category', 'name')
                 ->required(),
+
             Forms\Components\Select::make('location_id')
-                ->label('Lokasi')
+                ->label('Location')
                 ->relationship('location', 'name')
                 ->required(),
+
             Forms\Components\Select::make('status')
+                ->label('Status')
                 ->options([
                     'pending' => 'Pending',
                     'in_progress' => 'In Progress',
                     'resolved' => 'Resolved',
-                ]),
+                ])
+                ->default('pending'),
+
             Forms\Components\Select::make('reported_by')
+                ->label('Reported By')
                 ->relationship('reporter', 'name')
                 ->required(),
+
             Forms\Components\FileUpload::make('image')
-                ->label('Gambar')
+                ->label('Image')
                 ->directory('reports')
-                ->image(),
+                ->image()
+                ->nullable(),
         ]);
     }
 }

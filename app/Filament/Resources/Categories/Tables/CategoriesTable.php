@@ -15,16 +15,16 @@ class CategoriesTable
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama')
+                    ->label('Name')
                     ->sortable()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('description')
-                    ->label('Deskripsi')
+                    ->label('Description')
                     ->limit(30),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Dibuat')
+                    ->label('Created At')
                     ->dateTime('d M Y'),
             ])
             ->filters([]);

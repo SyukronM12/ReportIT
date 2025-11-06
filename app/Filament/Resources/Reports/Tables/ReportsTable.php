@@ -15,12 +15,12 @@ class ReportsTable
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label('Judul')
+                    ->label('Title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category.name')
-                    ->label('Kategori'),
+                    ->label('Category'),
                 Tables\Columns\TextColumn::make('location.name')
-                    ->label('Lokasi'),
+                    ->label('Location'),
                 Tables\Columns\TextColumn::make('status')
                     ->label('Status')
                     ->badge()
@@ -35,7 +35,7 @@ class ReportsTable
                     ->label('Reported By')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Dibuat')
+                    ->label('Created By')
                     ->dateTime('d M Y'),
             ])
             ->filters([])
